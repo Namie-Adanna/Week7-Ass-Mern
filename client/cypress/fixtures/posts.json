@@ -1,0 +1,78 @@
+{
+  "success": true,
+  "count": 3,
+  "total": 3,
+  "page": 1,
+  "pages": 1,
+  "data": [
+    {
+      "_id": "507f1f77bcf86cd799439011",
+      "title": "Getting Started with React",
+      "content": "React is a popular JavaScript library for building user interfaces. In this post, we'll explore the basics of React and how to get started with your first React application.",
+      "excerpt": "Learn the basics of React and build your first application",
+      "slug": "getting-started-with-react",
+      "author": {
+        "_id": "507f1f77bcf86cd799439012",
+        "name": "John Doe",
+        "email": "john@example.com"
+      },
+      "category": {
+        "_id": "507f1f77bcf86cd799439013",
+        "name": "Technology",
+        "slug": "technology"
+      },
+      "tags": ["react", "javascript", "frontend"],
+      "isPublished": true,
+      "viewCount": 150,
+      "createdAt": "2023-12-01T10:00:00.000Z",
+      "updatedAt": "2023-12-01T10:00:00.000Z",
+      "comments": []
+    },
+    {
+      "_id": "507f1f77bcf86cd799439014",
+      "title": "Healthy Living Tips",
+      "content": "Living a healthy lifestyle is important for overall well-being. Here are some practical tips to help you maintain a healthy lifestyle.",
+      "excerpt": "Practical tips for maintaining a healthy lifestyle",
+      "slug": "healthy-living-tips",
+      "author": {
+        "_id": "507f1f77bcf86cd799439015",
+        "name": "Jane Smith",
+        "email": "jane@example.com"
+      },
+      "category": {
+        "_id": "507f1f77bcf86cd799439016",
+        "name": "Lifestyle",
+        "slug": "lifestyle"
+      },
+      "tags": ["health", "lifestyle", "wellness"],
+      "isPublished": true,
+      "viewCount": 89,
+      "createdAt": "2023-11-28T14:30:00.000Z",
+      "updatedAt": "2023-11-28T14:30:00.000Z",
+      "comments": []
+    },
+    {
+      "_id": "507f1f77bcf86cd799439017",
+      "title": "Travel Photography Guide",
+      "content": "Capture amazing memories during your travels with these photography tips and techniques.",
+      "excerpt": "Tips and techniques for better travel photography",
+      "slug": "travel-photography-guide",
+      "author": {
+        "_id": "507f1f77bcf86cd799439018",
+        "name": "Mike Johnson",
+        "email": "mike@example.com"
+      },
+      "category": {
+        "_id": "507f1f77bcf86cd799439019",
+        "name": "Travel",
+        "slug": "travel"
+      },
+      "tags": ["travel", "photography", "tips"],
+      "isPublished": true,
+      "viewCount": 234,
+      "createdAt": "2023-11-25T09:15:00.000Z",
+      "updatedAt": "2023-11-25T09:15:00.000Z",
+      "comments": []
+    }
+  ]
+}
