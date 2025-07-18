@@ -1,0 +1,51 @@
+# Multi-stage Dockerfile for Node.js backend
+FROM node:18-alpine AS base
+
+# Install security updates and necessary packages
+RUN apk update && apk upgrade && \
+    apk add --no-cache dumb-init && \
+    addgroup -g 1001 -S nodejs && \
+    adduser -S nodejs -u 1001
+
+# Set working directory
+WORKDIR /app
+
+# Copy package files
+COPY server/package*.json ./
+COPY server/pnpm-lock.yaml* ./
+
+# Install dependencies
+RUN npm ci --only=production && npm cache clean --force
+
+# Development stage
+FROM base AS development
+RUN npm ci
+COPY server/ .
+USER nodejs
+EXPOSE 5000
+CMD ["dumb-init", "npm", "run", "dev"]
+
+# Production stage
+FROM base AS production
+
+# Copy application code
+COPY server/ .
+
+# Create logs directory
+RUN mkdir -p logs && chown -R nodejs:nodejs logs
+
+# Create uploads directory
+RUN mkdir -p uploads && chown -R nodejs:nodejs uploads
+
+# Switch to non-root user
+USER nodejs
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+  CMD node -e "require('http').get('http://localhost:5000/api/health', (res) => { process.exit(res.statusCode === 200 ? 0 : 1) })"
+
+# Expose port
+EXPOSE 5000
+
+# Start application
+CMD ["dumb-init", "node", "server.js"]

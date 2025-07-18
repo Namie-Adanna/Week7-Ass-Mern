@@ -1,0 +1,13 @@
+{
+  "name": "mern-blog-monitoring",
+  "version": "1.0.0",
+  "description": "Monitoring tools for MERN Blog application",
+  "main": "uptime-monitor.js",
+  "scripts": {
+    "start": "node uptime-monitor.js",
+    "monitor": "node uptime-monitor.js"
+  },
+  "keywords": ["monitoring", "uptime", "health-check"],
+  "author": "",
+  "license": "ISC"
+}
